@@ -23,5 +23,6 @@ typedef struct {
   void modeConfig(DeviceConfig *device, uint16_t value);
   void errorConfig(DeviceConfig *device, uint16_t value);
   void versionConfig(DeviceConfig *device, uint16_t value);
+  void reservedConfig(DeviceConfig *device, uint16_t value);
 
 #endif

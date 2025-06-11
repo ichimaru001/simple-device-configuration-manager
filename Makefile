@@ -20,6 +20,3 @@ $(TARGET): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# CLEAN COMMAND - REMOVE BUILD FILES
-clean:
-	rm -f $(OBJS) $(TARGET)

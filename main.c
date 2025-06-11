@@ -7,8 +7,8 @@
 //                        PRACTICE USING BITFIELDS AND ".c" AND ".h" FILES.          
 // -
 // TIME TAKEN     :       (started at 2HR 36MIN, 
-//                        finished at 3HR 40MIN)
-// TO COMPLETE
+// TO COMPLETE            finished at 4HR 16MIN)
+
 
 
 #include <stdio.h>
@@ -28,7 +28,8 @@ int main() {
   powerOnOffConfig(&sampleDevice, 0x01);    // on
   modeConfig(&sampleDevice, 0x03);          // value = 3
   errorConfig(&sampleDevice, 0x00);         // no error occurred
-  versionConfig(&sampleDevice, 0x0C);       // no error occurred 
+  versionConfig(&sampleDevice, 0x0C);       // value = 12
+  reservedConfig(&sampleDevice, 98);        // value = 98 
 
   // ** PRINTING CONFIGS
   printConfig(&sampleDevice);
