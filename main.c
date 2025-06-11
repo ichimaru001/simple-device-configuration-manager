@@ -6,7 +6,8 @@
 //                        WHICH HAS A CONFIGURATION REGISTER. 
 //                        PRACTICE USING BITFIELDS AND ".c" AND ".h" FILES.          
 // -
-// TIME TAKEN     :       (started at 2HR 36MIN)
+// TIME TAKEN     :       (started at 2HR 36MIN, 
+//                        finished at 3HR 40MIN)
 // TO COMPLETE
 
 
