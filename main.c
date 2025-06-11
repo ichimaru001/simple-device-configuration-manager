@@ -12,38 +12,25 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "device_config.h"
 
 
 int main() {
   printf("\n*** SIMPLE DEVICE CONFIGURATION MANAGER ***\n");
 
-  typedef struct {
-    uint16_t powerOn : 1;
-    uint16_t mode : 2;
-    uint16_t error : 1;
-    uint16_t reserved : 8;
-    uint16_t version : 4;
-  } DeviceBits;
-
-  typedef union {
-    uint16_t rawValue;
-    DeviceBits bits;
-  } DeviceConfig;
-
   DeviceConfig sampleDevice;
 
   // ** INITIALIZING THE DEVICE
-  sampleDevice.rawValue = 0;
+  initConfig(&sampleDevice);
 
   // ** SETTING STATES OF DEVICE
-  sampleDevice.bits.powerOn = 0x01; // on
-  sampleDevice.bits.mode = 0x03; // value = 3
-  sampleDevice.bits.error = 0x00; // no error occurred 
-  sampleDevice.bits.version = 0x0C; // version = 12
+  powerOnOffConfig(&sampleDevice, 0x01);    // on
+  modeConfig(&sampleDevice, 0x03);          // value = 3
+  errorConfig(&sampleDevice, 0x00);         // no error occurred
+  versionConfig(&sampleDevice, 0x0C);       // no error occurred 
 
   // ** PRINTING CONFIGS
-  printf("Hex format of status: %04X\n", sampleDevice.rawValue);
-  printf("\nPower On : %s\nMode : %u\nError : %u\nVersion : %u\n", (sampleDevice.bits.powerOn) == 0x01 ? "ON" : "OFF", sampleDevice.bits.mode, sampleDevice.bits.error, sampleDevice.bits.version);
+  printConfig(&sampleDevice);
 
   printf("\nSuccessfully loaded the configuration of the device!\n");
 
